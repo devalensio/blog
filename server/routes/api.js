@@ -4,7 +4,7 @@ const { addArticle,showArticle,editArticle,deleteArticle } = require('../control
 /* GET users listing. */
 router.post('/article', addArticle);
 router.get('/article', showArticle);
-router.put('/article/:id', editArticle);
+router.get('/article/edit/:id', editArticle);
 router.delete('/article/:id', deleteArticle)
 
 module.exports = router;

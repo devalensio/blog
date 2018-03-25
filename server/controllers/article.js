@@ -23,18 +23,17 @@ module.exports = {
     })
   },
   editArticle: function (req, res) {
-    console.log(req.params);
-    Article.findOne({_id: req.params.id}).then(data => {
-      console.log(data);
-      data.title = req.body.title
-      data.text = req.body.text
-      Article.update({_id: req.params.id},{$set:{title: data.title, text: data.text}})
-        .then(data_todo => {
-          res.status(201).json({
-            message: 'success update'
-          })
-        })
-    })
+    console.log(req.headers);
+    // Article.findOne({_id: req.params.id}).then(data => {
+    //   data.title = req.body.title
+    //   data.text = req.body.text
+    //   Article.update({_id: req.params.id},{$set:{title: data.title, text: data.text}})
+    //     .then(data_todo => {
+    //       res.status(201).json({
+    //         message: 'success update'
+    //       })
+    //     })
+    // })
   },
   deleteArticle: function (req, res) {
     Article.remove({_id: req.params.id}).then(data => {
